@@ -8,8 +8,8 @@ class LineList extends StatefulWidget {
 }
 
 class _LineListState extends State<LineList> {
-  int row_1 = 0;
-  int row_2 = 0;
+  int row_1 = 1;
+  int row_2 = 1;
 
   void onClick_1() {
     setState(() {
@@ -56,8 +56,9 @@ class _LineListState extends State<LineList> {
         Row(
           children: [
             Text('Row 2: '),
-            Text('$row_2'),
-
+            if (row_2 == 0) Text("want another line?"),
+            // Text('$row_2'),
+            SizedBox(width: 30),
             for (int i = 0; i <= row_2; i++)
               Image.asset(
                 'assets/img/wallpaper.jpg',
